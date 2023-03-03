@@ -130,6 +130,7 @@ filvcf.param
 ```bat
 sh 05-MergeVCF.sh
 ```
-This step will generate three param file named as "bcfindex1.param",
-"bcfmerge.param", and "bcfindex1.param". This entirely depends on the number
-of samples we are merging and may require optimization
+This step will generate three param files named as "bcfindex1.param",
+"bcfmerge.param", and "bcfindex1.param". The computational requirements of this
+step entirely depends on the number of samples we are merging and may require
+optimization.
