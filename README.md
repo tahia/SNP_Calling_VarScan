@@ -1,6 +1,6 @@
 ### README For Variant Calling by VarScan on TACC (Stampede2)
 **Written by : Taslima Haque**
-**Last Modified: 03/02/2023**
+**Last Modified: 03/03/2023**
 
 **Contact : taslima@utexas.edu**
 
