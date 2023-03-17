@@ -59,6 +59,12 @@ The slurm file is provide with the pipe named as "slurm.sh"
 
 #### Step 1: Map and filter
 
+Index the reference genome if needed
+
+```bat
+bwa-mem2 index Reference.fa
+```
+
 ```bat
   sh 01-BWA2-Mapping-Filter-Sort.sh
 ```
@@ -83,12 +89,11 @@ This step will generate a param file named as "dedup.param". We are going
 to run this on "normal" queue with 15 hours limit while each job will take one
 entire node. This step is limited mostly for memory than CPU therefore on
 "normal" queue it would be cheaper and not much less faster than "skx-normal"
-queue. The max it took me to run the largest sample was 11 hours therefore
-15 hours should be a safe limit. The following command should work for 48
-samples:
+queue. We will keep the max time as the upper limit which is 48 hours.
+The following command should work for 48 samples:
 
 ```bat
-sbatch -t 15:00:00 -N 48 -n 48 --ntasks-per-node=1 -p normal slurm.sh \
+sbatch -t 48:00:00 -N 48 -n 48 --ntasks-per-node=1 -p normal slurm.sh \
 dedup.param
 ```
 #### Step 3: Call variants
